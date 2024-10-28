@@ -55,10 +55,27 @@ Explore algorithms for instance segmentation of the nuclei from the 'nuclei chan
 After successfully segmenting the nuclei from the covid assay dataset, save the results in the appropriate format (tiff of hdf5),
 since you'll need it in step 3.
 
+There are multiple options for nuclei instance segmentation that you could explore, this include but are not limited to
+- ilastik workflows
+- StarDist Model
+- Cellpose Model
+You are welcome to explore whatever approach you would like and can even compare the results of mulitple methods.
+
+## ilastik
+If you decide to investigate ilastik you have multiple workflows that you could try
+1. [`Pixel Classification`](https://www.ilastik.org/documentation/pixelclassification/pixelclassification) followed by [`Object Classification`](https://www.ilastik.org/documentation/objects/objects).
+2. [`Neural Network Classification (Local)`](https://www.ilastik.org/documentation/nn/nn) followed by [`Boundary-based Segmentation with Multicut`](https://www.ilastik.org/documentation/multicut/multicut). !See more information below!
+
+More information about how to perform all of the workflows or any general information about ilastik can be found in the [documentation](https://www.ilastik.org/documentation/).
+
+!Neural Network Classification (Local)!
+If you decide to investigate the 2nd option listed above you will be making use of a pre-trained CNN to predict the nuclei. You can follow the instructions given in the next stage (Cell boundary segmentation). However, you should select a different model, one that is more suitable to your current task [`NucleiSegmentationBoundaryModel](https://bioimage.io/#/?tags=nuclei&id=10.5281%2Fzenodo.5764892).
+
+
 ### Cell boundary segmentation
 
 In order to simplify the task of cell boundary prediction you will also use a pre-trained CNN.
-This time we encourage you to use the [ilatik Neural Network Classification Workflow](https://www.ilastik.org/documentation/nn/nn).
+This time we encourage you to use the [ilastik Neural Network Classification Workflow](https://www.ilastik.org/documentation/nn/nn).
 Please download and install the **latest beta version** of ilastik in order to use the Neural Network Classification workflow (see: https://www.ilastik.org/download.html).
 
 Then:
@@ -66,7 +83,7 @@ Then:
 - open ilastik and create the `Neural Network Classification (Local)` project
 - load a sample H5 image: `Raw Data -> Add New -> Add separate image -> (choose h5 file)`
   make sure to load only the serum channel (you need to extract the serum channel and save it in a separate h5 file beforehand). The size of the input should be `(1, 1024, 1024)`; **do not skip the singleton dimension**
-- go to [BioimageIO](https://bioimage.io/), find [`CovidIFCellSegmentationBoundaryModel`](https://bioimage.io/#/?id=10.5281%2Fzenodo.5847355). We are going to use this pre-trained network to predict the cell boundary segmentation. Copy the name (powerful-chipmunk) and paste it into the box in the NN Prediction section.
+- go to [BioimageIO](https://bioimage.io/), find [`CovidIFCellSegmentationBoundaryModel`](https://bioimage.io/#/?id=10.5281%2Fzenodo.5847355). We are going to use this pre-trained network to predict the cell boundary segmentation. Copy the name (powerful-chipmunk) and paste it into the box in the `NN Prediction` section.
 - go to `NN Prediction` and click the green arrow (`Load model`); this will load the weights of the selected model.
 - after the model has been loaded successfully, click `Live Predict`; after the prediction is finished you can see the two output channels
   predicted by the network (i.e. foreground channel and cell boundaries channel) by switching between the layers in `Group Visibility` section (bottom left);
