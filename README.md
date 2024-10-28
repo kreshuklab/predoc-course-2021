@@ -59,6 +59,8 @@ There are multiple options for nuclei instance segmentation that you could explo
 - ilastik workflows
 - StarDist Model
 - Cellpose Model
+- PlantSeg Model
+- InstanSeg
 
 You are welcome to explore whatever approach you would like and can even compare the results of mulitple methods.
 
@@ -72,6 +74,14 @@ More information about how to perform all of the workflows or any general inform
 :exclamation:Neural Network Classification (Local):exclamation:
 
 If you decide to investigate the 2nd option listed above you will be making use of a pre-trained CNN to predict the nuclei. You can follow the instructions given in the next stage (Cell boundary segmentation). However, you should select a different model, one that is more suitable to your current task [`NucleiSegmentationBoundaryModel](https://bioimage.io/#/?tags=nuclei&id=10.5281%2Fzenodo.5764892).
+
+#### StarDist
+[StarDist](https://github.com/stardist/stardist) is a method based on neural networks that can perform segmentation. More deatils on StarDist can be found on the github or in the original [publication](https://arxiv.org/abs/1806.03535) approaches have pretrained models available to use on your own data. As detailed on the github page StarDist can be installed as a package and used programmatically, you are welcome to do this and explore the results. Alternatively, if you would rather interact with a gui StarDist can be run through a Fiji plugin [StarDist Fiji](https://imagej.net/plugins/stardist).
+
+
+#### Cellpose
+[Cellpose](https://github.com/MouseLand/cellpose) is another neural netowrk based method that can perform object segmentaiton.Instructions for the use and installation of Cellpose can be found on the github page. You can interact with cellpose either programmatically or via a gui. Once again cellpose provides pretrained models that you can make use of. :exclamation: Warning :exclamation: this does require the setting up of a python conda environment, if you are not already familiar with conda environments I reccomend installing [miniforge](https://github.com/conda-forge/miniforge).
+
 
 
 ### Cell boundary segmentation
