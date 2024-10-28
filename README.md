@@ -1,4 +1,4 @@
-# EIPP Theory@EMBL 2023 <!-- omit in toc -->
+# EIPP Theory@EMBL 2024<!-- omit in toc -->
 
 _Course material in previous years/events are managed by other branches._
 
