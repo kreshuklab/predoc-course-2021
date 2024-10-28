@@ -59,16 +59,18 @@ There are multiple options for nuclei instance segmentation that you could explo
 - ilastik workflows
 - StarDist Model
 - Cellpose Model
+
 You are welcome to explore whatever approach you would like and can even compare the results of mulitple methods.
 
-## ilastik
+#### ilastik
 If you decide to investigate ilastik you have multiple workflows that you could try
 1. [`Pixel Classification`](https://www.ilastik.org/documentation/pixelclassification/pixelclassification) followed by [`Object Classification`](https://www.ilastik.org/documentation/objects/objects).
 2. [`Neural Network Classification (Local)`](https://www.ilastik.org/documentation/nn/nn) followed by [`Boundary-based Segmentation with Multicut`](https://www.ilastik.org/documentation/multicut/multicut). !See more information below!
 
 More information about how to perform all of the workflows or any general information about ilastik can be found in the [documentation](https://www.ilastik.org/documentation/).
 
-!Neural Network Classification (Local)!
+:exclamation:Neural Network Classification (Local):exclamation:
+
 If you decide to investigate the 2nd option listed above you will be making use of a pre-trained CNN to predict the nuclei. You can follow the instructions given in the next stage (Cell boundary segmentation). However, you should select a different model, one that is more suitable to your current task [`NucleiSegmentationBoundaryModel](https://bioimage.io/#/?tags=nuclei&id=10.5281%2Fzenodo.5764892).
 
 
