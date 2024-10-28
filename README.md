@@ -66,8 +66,8 @@ Then:
 - open ilastik and create the `Neural Network Classification (Local)` project
 - load a sample H5 image: `Raw Data -> Add New -> Add separate image -> (choose h5 file)`
   make sure to load only the serum channel (you need to extract the serum channel and save it in a separate h5 file beforehand). The size of the input should be `(1, 1024, 1024)`; **do not skip the singleton dimension**
-- go to [BioimageIO](https://bioimage.io/), find [`CovidIFCellSegmentationBoundaryModel`](https://bioimage.io/#/?id=10.5281%2Fzenodo.5847355) and download ilastik weights by clicking on the ilastik `icon` and then `Download (Pytorch State Dict)`
-- go to `NN Prediction` and click `Load model`; load the model file downloaded in the previous step
+- go to [BioimageIO](https://bioimage.io/), find [`CovidIFCellSegmentationBoundaryModel`](https://bioimage.io/#/?id=10.5281%2Fzenodo.5847355). We are going to use this pre-trained network to predict the cell boundary segmentation. Copy the name (powerful-chipmunk) and paste it into the box in the NN Prediction section.
+- go to `NN Prediction` and click the green arrow (`Load model`); this will load the weights of the selected model.
 - after the model has been loaded successfully, click `Live Predict`; after the prediction is finished you can see the two output channels
   predicted by the network (i.e. foreground channel and cell boundaries channel) by switching between the layers in `Group Visibility` section (bottom left);
   you should see something like the image below:
