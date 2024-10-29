@@ -25,8 +25,8 @@ For the following challenge there is a lot of flexibility depending how you want
 - [Jupyterhub](https://jupyterhub.embl.de/hub/spawn)
 - [BARD](https://bard.embl.de/)
 
-When you have gained access to the VMs we still need to get access to the data, you can once again go through the own cloud (although annoyingly copy and paste won't work, so you will have to type out the url :unamused:) or I have downloaded the relevant data already onto my personal g-drive so you can just copy it from there to whatever location you like on your /home/USER_NAME or /g/GROUP_NAME/USER_NAME folder. To copy the data to your desired location navigate to the desired location using the `cd` command and then enter. To check your current location can use the `pwd` command.
-- `cp -r /g/kreshuk/talks/predoc-course`
+When you have gained access to the VMs we still need to get access to the data, you can do this through the own cloud as described below (although annoyingly copy and paste won't work, so you will have to type out the url :unamused:) or I have downloaded the relevant data already onto my personal g-drive so you can just copy it from there to whatever location you like on your /home/USER_NAME or /g/GROUP_NAME/USER_NAME folder. To copy the data to your desired location navigate to the desired location using the `cd` command. To check your current location can use the `pwd` command. Use the following w=command to copy the data, entering the your current location path as /PATH/TO/PASTE/LOCATION.
+- `cp -r /g/kreshuk/talks/predoc-course /PATH/TO/PASTE/LOCATION`
 
 ## Challenge: Cell segmentation
 
