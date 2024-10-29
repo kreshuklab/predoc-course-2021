@@ -87,11 +87,11 @@ If you decide to investigate the 2nd option listed above you will be making use 
 You can either install ilastik locally on your machine and run everything there, or login to a VM (as discussed above) and run the workflows directly in the pre-installed ilastik.
 
 #### StarDist
-[StarDist](https://github.com/stardist/stardist) is a method based on neural networks that can perform segmentation. More deatils on StarDist can be found on the github or in the original [publication](https://arxiv.org/abs/1806.03535) approaches have pretrained models available to use on your own data. As detailed on the github page StarDist can be installed as a package and used programmatically, you are welcome to do this and explore the results. Alternatively, if you would rather interact with a gui, StarDist can be run through a Fiji plugin [StarDist Fiji](https://imagej.net/plugins/stardist). If you are using the Fiji plugin I recommend using the model called `Versatile (fluorescent nuclei)`.
+[StarDist](https://github.com/stardist/stardist) is a method based on neural networks that can perform segmentation. More deatils on StarDist can be found on the github or in the original [publication](https://arxiv.org/abs/1806.03535). If you chose to investigate StarDist we can utalise a pretrained model. As detailed on the github page StarDist can be installed as a package and used programmatically, you are welcome to do this and explore the results. Alternatively, if you would rather interact with a gui, StarDist can be run through a Fiji plugin [StarDist Fiji](https://imagej.net/plugins/stardist). If you are using the Fiji plugin I recommend using the model called `Versatile (fluorescent nuclei)`.
 
-If you are working on a Virtual Machine you can either install your own version of Fiji or use my pre-installed version that has the StarDist plugin installed. To access this version of Fiji run the following command in the VMs terminal. 
+:exclamation:Intallation Advice:exclamation:
+If you are working on a Virtual Machine the pre-existing Fiji is a bit of a problem as it is read only ... yada yada yada. Basically you will need to install your own version of Fiji to allow you to add the StarDist plugin. **Alternatively** you can use my pre-installed version that has the StarDist plugin already installed :star:. To access this version of Fiji run the following command in the VMs terminal. 
 `/g/kreshuk/talks/Fiji.app/ImageJ-linux64`
-
 
 
 #### Cellpose
