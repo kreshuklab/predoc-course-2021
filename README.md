@@ -19,6 +19,14 @@ You will design an image segmentation pipeline for immunofluorescence images of 
 - **Challenge**: You will design an image analysis pipeline for immunofluorescence images of COVID-infected cells (https://www.biorxiv.org/content/10.1101/2020.06.15.152587v2). In the first part of the challenge, you will explore algorithms to segment the cell nuclei. Then, you will investigate how segmented nuclei can help in the more challenging task of segmenting the entire cell membrane. In this challenge, you will learn how to use and adapt state-of-the-art bioimage analysis algorithms and combine them in a custom pipeline to quantify visual information from microscopy images.
 - **Pre-requisites**: you will ace this challenge if you either have some prior experience with images (used Fiji before, for example) or some prior experience with coding in Python. If you don’t have either, try to get on a team where at least one member has it and you’ll learn along the way.
 
+
+## How is this going to work?
+For the following challenge there is a lot of flexibility depending how you want to work and how much experience you already have with python and image analyis. All the exercises can be run locally on your own computer, although this will require some installation of various tools and also usage of conda environments. If you would rather not run things locally or don't feel confident with how that would work then we also have several virtual machines (VMs) which we can run through your computer. Another advantage of using these achines is that most of the software we want ot use comes pre-installed. I will run through how to access these in a short demo, but you should be able to follow these links and then just use your embl credentials to access the VMs.
+- [Jupyterhub](https://jupyterhub.embl.de/hub/spawn)
+- [BARD](https://bard.embl.de/)
+When you have gained access to the VMs we still need to get access to the data, you can once again go through the own cloud (although annoyingly copy and paste won't work, so you will have to type out the url :unamused:) or I have downloaded the relevant data already onto my personal g-drive so you can just copy it from there to whatever location you like on your /home/USER_NAME or /g/GROUP_NAME/USER_NAME folder. To copy the data to your desired location navigate to the desired location using the `cd` command and then enter. To check your current location can use the `pwd` command.
+- `cp -r /g/kreshuk/talks/predoc-course`
+
 ## Challenge: Cell segmentation
 
 You will explore algorithms to segment individual cells in the IF images from the above
@@ -85,6 +93,19 @@ If you decide to investigate the 2nd option listed above you will be making use 
 
 Once you have PlantSeg installed can follow the instructions in the [documentation](https://kreshuklab.github.io/plant-seg/) to run PlantSeg through the napari plugin. You will once again load a pre-trained model and can explore the functionality of PlantSeg. I recommend using the `lightsheet_2D_unet_root_nuclei_ds1x` model
 
+## :exclamation: Conda Environment :exclamation:
+If you want to use conda environments for any of the stages of this practical you have a few options depending on your familiarity level.
+1. You know what a Conda environment is and are happy using them, go ahead no need to read more!!!
+2. You sort of know what a Conda environment is and want to install and set up your own. Hats off to you, give it a go its not that scary :ghost: :ghost:. I advise installing [mininforge](https://github.com/conda-forge/miniforge) you cane follow the instructions on their github and ask if you need help.
+3. What is a Conda??? Isn't that a type of snake :snake:? Fear not I have set up some conda environments for you that you can use without installing anything by following the instructions below.
+  - For this to work you need to be logged into one of the VMs through [Jupyterhub](https://jupyterhub.embl.de/hub/spawn) or [BARD](https://bard.embl.de/). If you decide to use Jupyterhub then I recommend the `Image Analysis: Special Purpose Desktops`.
+  - Open a terminal, you should be in your home folder e.g. /home/username.
+  - To activate a Conda environment enter the following command into the terminal, replacing ENV_NAME with the desired environment name 
+    `/g/kreshuk/talks/miniforge3/bin/conda activate ENV_NAME`
+    I have made a few environments for you to use, the general environment needed to run the notebook is named `predoc-challenge`. An environment to run PlantSeg is called `plant-seg`. An environment to run Cellpose is called 
+  - Once your environment is activated you can run whatever commands are neccesary in that same terminal, as per the instructions of the tool you are investigating.
+  - To deactivate an environment, for example if you want to switch environments run the following command
+    `/g/kreshuk/talks/miniforge3/bin/conda deactivate`
 
 ### 2. Cell boundary segmentation
 
