@@ -12,4 +12,5 @@ dependencies:
   - napari
   - matplotlib
   - tifffile
+  - ipykernel
 
