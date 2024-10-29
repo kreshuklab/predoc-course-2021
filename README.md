@@ -85,6 +85,10 @@ If you decide to investigate the 2nd option listed above you will be making use 
 #### StarDist
 [StarDist](https://github.com/stardist/stardist) is a method based on neural networks that can perform segmentation. More deatils on StarDist can be found on the github or in the original [publication](https://arxiv.org/abs/1806.03535) approaches have pretrained models available to use on your own data. As detailed on the github page StarDist can be installed as a package and used programmatically, you are welcome to do this and explore the results. Alternatively, if you would rather interact with a gui StarDist can be run through a Fiji plugin [StarDist Fiji](https://imagej.net/plugins/stardist).
 
+If you are working on a Virtual Machine you can either install your own version of Fiji or use my pre-installed version that has the StarDist plugin installed. To access this version of Fiji run the following command in the VMs terminal. 
+`/g/kreshuk/talks/Fiji.app/ImageJ-linux64`
+
+
 
 #### Cellpose
 [Cellpose](https://github.com/MouseLand/cellpose) is another neural netowrk based method that can perform object segmentaiton.Instructions for the use and installation of Cellpose can be found on the github page. You can interact with cellpose either programmatically or via a gui. Once again cellpose provides pretrained models that you can make use of. :exclamation: WARNING :exclamation: this does require the setting up of a python conda environment, if you are not already familiar with conda environments I recommend installing [miniforge](https://github.com/conda-forge/miniforge).
@@ -92,7 +96,10 @@ If you decide to investigate the 2nd option listed above you will be making use 
 #### PlantSeg
 [PlantSeg](https://github.com/kreshuklab/plant-seg) is a tool for cell instance aware segmentation in densely packed 3D volumetric images. The pipeline uses a two stages segmentation strategy (Neural Network + Segmentation). The pipeline is tuned for plant cell tissue acquired with confocal and light sheet microscopy. Pre-trained models are provided. Follow the github page for installation instructions, :exclamation: WARNING :exclamation: Requires setting up a conda environment follow installation advice for [miniforge](https://github.com/conda-forge/miniforge).
 
-Once you have PlantSeg installed can follow the instructions in the [documentation](https://kreshuklab.github.io/plant-seg/) to run PlantSeg through the napari plugin. You will once again load a pre-trained model and can explore the functionality of PlantSeg. I recommend using the `lightsheet_2D_unet_root_nuclei_ds1x` model
+Once you have PlantSeg installed can follow the instructions in the [documentation](https://kreshuklab.github.io/plant-seg/) to run PlantSeg through the napari plugin. You will once again load a pre-trained model and can explore the functionality of PlantSeg. I recommend using the `lightsheet_2D_unet_root_nuclei_ds1x` model.
+
+If you are using my conda environment following the instructions the Conda Environment section you may get an error referring to your QT_API. Try running the following command.
+`export QT_API=pyqt5`
 
 ## :exclamation: Conda Environment :exclamation:
 If you want to use conda environments for any of the stages of this practical you have a few options depending on your familiarity level.
@@ -101,12 +108,14 @@ If you want to use conda environments for any of the stages of this practical yo
 3. What is a Conda??? Isn't that a type of snake :snake:? Fear not I have set up some conda environments for you that you can use without installing anything by following the instructions below.
   - For this to work you need to be logged into one of the VMs through [Jupyterhub](https://jupyterhub.embl.de/hub/spawn) or [BARD](https://bard.embl.de/). If you decide to use Jupyterhub then I recommend the `Image Analysis: Special Purpose Desktops`.
   - Open a terminal, you should be in your home folder e.g. /home/username.
+  - Now need to initialise Conda with the command 
+  `/g/kreshuk/talks/miniforge3/bin/conda init`
+  - Now close and re-open the terminal to allow this to take afffect
   - To activate a Conda environment enter the following command into the terminal, replacing ENV_NAME with the desired environment name 
-    `/g/kreshuk/talks/miniforge3/bin/conda activate ENV_NAME`
+    `conda activate ENV_NAME`
     I have made a few environments for you to use, the general environment needed to run the notebook is named `predoc-challenge`. An environment to run PlantSeg is called `plant-seg`. An environment to run Cellpose is called 
   - Once your environment is activated you can run whatever commands are neccesary in that same terminal, as per the instructions of the tool you are investigating.
-  - To deactivate an environment, for example if you want to switch environments run the following command
-    `/g/kreshuk/talks/miniforge3/bin/conda deactivate`
+  
 
 :exclamation: IMPORTANT :exclamation: If you want to run a notebook you will need to activate the python environment as a kernel in the Jupyter Notebook. First we need to add the conda environment to jupyter notebook.
 1. Go to the terminal and activate the environment as before, `/g/kreshuk/talks/miniforge3/bin/conda activate predoc-challenge`
