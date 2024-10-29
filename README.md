@@ -28,7 +28,7 @@ study as shown in the picture below:
 
 The input to the pipeline is an image consiting of 3 channels: the 'nuclei channel' (containing DAPI stained nuclei), the 'serum channel' (dsRNA antibody staining) and the 'infection channel' (ignored in this challenge).
 The output from the pipeline is a segmentation image where each individual cell is assigned a unique label/number.
-You can download the Covid assay dataset from [here](https://oc.embl.de/index.php/s/gfpnDykYgcxoM7y).
+You can download the Covid assay dataset from [here](https://oc.embl.de/index.php/s/zOl3CFIApyTmvL1?path=%2FWeek%205%20-%20Theory%40EMBL%2FTeam2-Kreshuk).
 The dataset consist of 6 files containing the raw data together with ground-truth labels.
 The data is saved using the HDF5 file format. Each HDF5 file contains two internal datasets:
 
