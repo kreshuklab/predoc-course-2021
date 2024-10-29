@@ -108,6 +108,10 @@ If you want to use conda environments for any of the stages of this practical yo
   - To deactivate an environment, for example if you want to switch environments run the following command
     `/g/kreshuk/talks/miniforge3/bin/conda deactivate`
 
+:exclamation: IMPORTANT :exclamation: If you want to run a notebook you will need to activate the python environment as a kernel in the Jupyter Notebook. First we need to add the conda environment to jupyter notebook. This can be done using the following command
+`python -m ipykernel install --user --name=predoc-challenge`
+Now when you open up a notebook you can select kernel in the top right and select the `predoc-challenge` kernel.
+
 ### 2. Cell boundary segmentation
 
 In order to simplify the task of cell boundary prediction you will also use a pre-trained CNN.
