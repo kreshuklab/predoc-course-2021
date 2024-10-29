@@ -106,8 +106,9 @@ Alternatively, if you don't want to install Cellpose you can find it pre-install
 
 Once you have PlantSeg installed can follow the instructions in the [documentation](https://kreshuklab.github.io/plant-seg/) to run PlantSeg through the napari plugin. You will once again load a pre-trained model and can explore the functionality of PlantSeg. I recommend using the `lightsheet_2D_unet_root_nuclei_ds1x` model.
 
-If you are using my conda environment following the instructions the Conda Environment section you may get an error referring to your QT_API. Try running the following command.
-`export QT_API=pyqt5`
+:exclamation: Installation Advice :exclamation: 
+
+If you don't want to install PlantSeg yourself you can use a pre-installed  version via the VMs. In order to access this installation you need to first activate my premade `plant-seg` conda environment. This can be done following the instructions given in the Conda Environment section 3. below. After you have activated the enviroment you need to run the usual PlantSeg command. `plantseg --napari` which will open up the napari gui. You may get an error referring to your QT_API. Try running the following command. `export QT_API=pyqt5`
 
 ## :exclamation: Conda Environment :exclamation:
 If you want to use conda environments for any of the stages of this practical you have a few options depending on your familiarity level.
