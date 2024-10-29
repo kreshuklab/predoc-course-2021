@@ -20,14 +20,6 @@ You will design an image segmentation pipeline for immunofluorescence images of 
 - **Pre-requisites**: you will ace this challenge if you either have some prior experience with images (used Fiji before, for example) or some prior experience with coding in Python. If you don’t have either, try to get on a team where at least one member has it and you’ll learn along the way.
 
 
-## How is this going to work?
-For the following challenge there is a lot of flexibility depending on how you want to work and how much experience you already have with python and image analyis. All the exercises can be run locally on your own computer, although this will require some installation of various tools and also usage of conda environments. If you would rather not run things locally or don't feel confident with how that would work then we also have several virtual machines (VMs) which we can run through your computer. Another advantage of using the VMs is that most of the software we want to use has been pre-installed. I will run through how to access these in a short demo, but you should be able to follow these links and then just use your embl credentials to access the VMs.
-- [Jupyterhub](https://jupyterhub.embl.de/hub/spawn)
-- [BARD](https://bard.embl.de/)
-
-When you have gained access to the VMs we still need to get access to the data, you can do this through the [ownCloud](https://oc.embl.de/index.php/s/zOl3CFIApyTmvL1?path=%2FWeek%205%20-%20Theory%40EMBL%2FTeam2-Kreshuk) as described below (although annoyingly copy and pasting might be annoying, so you might have to type out the url :unamused:) or I have downloaded the relevant data already onto my personal g-drive so you can just copy it from there to whatever location you like, for example your /home/USER_NAME folder. To copy the data to your desired location navigate to the desired location using the `cd` command. To check your current location you can use the `pwd` command. Use the following command to copy the data to your current location with the smae filename.
-- `cp -r /g/kreshuk/talks/predoc-course ./`
-
 ## Challenge: Cell segmentation
 
 You will explore algorithms to segment individual cells in the IF images from the above
@@ -57,6 +49,14 @@ After successfully executing the 3 pipeline steps, you can qualitatively compare
 For quantitative comparison one may use one of the common instance segmentation metrics, e.g. [Adapted Rand Error](https://scikit-image.org/docs/dev/api/skimage.metrics.html#skimage.metrics.adapted_rand_error).
 
 More detailed description of the 3 steps can be found below.
+
+## How is this going to work?
+For the following challenge there is a lot of flexibility depending on how you want to work and how much experience you already have with python and image analyis. All the exercises can be run locally on your own computer, although this will require some installation of various tools and also usage of conda environments. If you would rather not run things locally or don't feel confident with how that would work then we also have several virtual machines (VMs) which we can run through your computer. Another advantage of using the VMs is that most of the software we want to use has been pre-installed. I will run through how to access these in a short demo, but you should be able to follow these links and then just use your embl credentials to access the VMs.
+- [Jupyterhub](https://jupyterhub.embl.de/hub/spawn)
+- [BARD](https://bard.embl.de/)
+
+When you have gained access to the VMs we still need to get access to the data, you can do this through the [ownCloud](https://oc.embl.de/index.php/s/zOl3CFIApyTmvL1?path=%2FWeek%205%20-%20Theory%40EMBL%2FTeam2-Kreshuk) as described below (although annoyingly copy and pasting might be annoying, so you might have to type out the url :unamused:) or I have downloaded the relevant data already onto my personal g-drive so you can just copy it from there to whatever location you like, for example your /home/USER_NAME folder. To copy the data to your desired location navigate to the desired location using the `cd` command. To check your current location you can use the `pwd` command. Use the following command to copy the data to your current location with the smae filename.
+- `cp -r /g/kreshuk/talks/predoc-course ./`
 
 ### 1. Nuclei segmentation
 
