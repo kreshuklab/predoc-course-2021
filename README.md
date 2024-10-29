@@ -30,12 +30,13 @@ study as shown in the picture below:
 The input to the pipeline is an image consiting of 3 channels: the 'nuclei channel' (containing DAPI stained nuclei), the 'serum channel' (dsRNA antibody staining) and the 'infection channel' (ignored in this challenge).
 The output from the pipeline is a segmentation image where each individual cell is assigned a unique label/number.
 You can download the Covid assay dataset from [here](https://oc.embl.de/index.php/s/zOl3CFIApyTmvL1?path=%2FWeek%205%20-%20Theory%40EMBL%2FTeam2-Kreshuk).
-The dataset consist of 6 files containing the raw data together with ground-truth labels.
-The data is saved using the HDF5 file format. Each HDF5 file contains two internal datasets:
+The dataset consist of 6 files containing the raw data together with ground-truth labels. I have made the data available as both HDF5 file format and tif file format. Each HDF5 file contains three internal datasets:
 
 - `raw` - containing the 3 channel input image; dataset shape: `(3, 1024, 1024)`: 1st channel - serum, 2nd channel - infection (**ignored**), 3 - nuclei
 - `cells` - containing the ground truth cell segmentation `(1024, 1024)`
 - `infected` - containing the ground truth for cell infection (at the nuclei level); contains 3 labels: `0 - background`, `1 - infected cell/nuclei`, `2 - non-infected cell/nuclei`
+
+I have also seperated out the nuclei and serum channels from the raw and saved these seperately for you to use in the stages of the challenge. The seperated channel images can be found in `nuclei` and `serum` folders. Each file contains a image of shape `(1, 1024, 1024)`. 
 
 We recommend [ilastik4ij ImageJ/Fiji](https://github.com/ilastik/ilastik4ij) or [napari](https://napari.org/) for loading and exploring the data.
 
@@ -55,7 +56,7 @@ For the following challenge there is a lot of flexibility depending on how you w
 - [Jupyterhub](https://jupyterhub.embl.de/hub/spawn)
 - [BARD](https://bard.embl.de/)
 
-When you have gained access to the VMs we still need to get access to the data, you can do this through the [ownCloud](https://oc.embl.de/index.php/s/zOl3CFIApyTmvL1?path=%2FWeek%205%20-%20Theory%40EMBL%2FTeam2-Kreshuk) as described below (although annoyingly copy and pasting might be annoying, so you might have to type out the url :unamused:) or I have downloaded the relevant data already onto my personal g-drive so you can just copy it from there to whatever location you like, for example your /home/USER_NAME folder. To copy the data to your desired location navigate to the desired location using the `cd` command. To check your current location you can use the `pwd` command. Use the following command to copy the data to your current location with the smae filename.
+When you have gained access to the VMs we still need to get access to the data, you can do this through the [ownCloud](https://oc.embl.de/index.php/s/zOl3CFIApyTmvL1?path=%2FWeek%205%20-%20Theory%40EMBL%2FTeam2-Kreshuk) as described below (although annoyingly copy and pasting might be annoying, so you might have to type out the url :unamused:) or I have downloaded the relevant data already onto my personal g-drive so you can just copy it from there to whatever location you like, for example your /home/USER_NAME folder. To copy the data to your desired location navigate to the desired location using the `cd` command. To check your current location you can use the `pwd` command. Use the following command to copy the data to your current location with the same filename.
 - `cp -r /g/kreshuk/talks/predoc-course ./`
 
 ### 1. Nuclei segmentation
@@ -63,13 +64,13 @@ When you have gained access to the VMs we still need to get access to the data, 
 Explore algorithms for instance segmentation of the nuclei from the 'nuclei channel'.
 After successfully segmenting the nuclei from the covid assay dataset, save the results in the appropriate format (tiff of hdf5), since you'll need it in step 3.
 
-There are multiple options for nuclei instance segmentation that you could explore, this include but are not limited to
-- ilastik workflows
-- StarDist Model
-- Cellpose Model
-- PlantSeg Model
+There are multiple options for nuclei instance segmentation that you could explore, this includes but is not limited to
+- ilastik
+- StarDist
+- Cellpose
+- PlantSeg
 
-You are welcome to explore whatever approach you would like and can even compare the results of mulitple methods.
+You are welcome to explore whatever approach you would like and can even compare the results of mulitple methods if you have time.
 
 #### ilastik
 If you decide to investigate ilastik you have multiple workflows that you could try
@@ -81,6 +82,9 @@ More information about how to perform all of the workflows or any general inform
 :exclamation:Neural Network Classification (Local):exclamation:
 
 If you decide to investigate the 2nd option listed above you will be making use of a pre-trained CNN to predict the nuclei. You can follow the instructions given in the next stage (Cell boundary segmentation). However, you should select a different model, one that is more suitable to your current task [NucleiSegmentationBoundaryModel](https://bioimage.io/#/?tags=nuclei&id=10.5281%2Fzenodo.5764892).
+
+:exclamation:Intallation Advice:exclamation:
+You can either install ilastik locally on your machine and run everything there, or login to a VM (as discussed above) and run the workflows directly in the pre-installed ilastik.
 
 #### StarDist
 [StarDist](https://github.com/stardist/stardist) is a method based on neural networks that can perform segmentation. More deatils on StarDist can be found on the github or in the original [publication](https://arxiv.org/abs/1806.03535) approaches have pretrained models available to use on your own data. As detailed on the github page StarDist can be installed as a package and used programmatically, you are welcome to do this and explore the results. Alternatively, if you would rather interact with a gui, StarDist can be run through a Fiji plugin [StarDist Fiji](https://imagej.net/plugins/stardist). If you are using the Fiji plugin I recommend using the model called `Versatile (fluorescent nuclei)`.
