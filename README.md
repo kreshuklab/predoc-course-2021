@@ -103,8 +103,8 @@ If you are using my conda environment following the instructions the Conda Envir
 
 ## :exclamation: Conda Environment :exclamation:
 If you want to use conda environments for any of the stages of this practical you have a few options depending on your familiarity level.
-1. You know what a Conda environment is and are happy using them, go ahead no need to read more!!!
-2. You sort of know what a Conda environment is and want to install and set up your own. Hats off to you, give it a go its not that scary :ghost: :ghost:. I advise installing [mininforge](https://github.com/conda-forge/miniforge) you cane follow the instructions on their github and ask if you need help.
+1. You know what a Conda environment is and want to make yout own, go ahead no need to read more!!!
+2. You sort of know what a Conda environment is and want to install and set up your own. Hats off to you, give it a go its not that scary :ghost: :ghost:. I advise installing [mininforge](https://github.com/conda-forge/miniforge) you can follow the instructions on their github and ask if you need help.
 3. What is a Conda??? Isn't that a type of snake :snake:? Fear not I have set up some conda environments for you that you can use without installing anything by following the instructions below.
   - For this to work you need to be logged into one of the VMs through [Jupyterhub](https://jupyterhub.embl.de/hub/spawn) or [BARD](https://bard.embl.de/). If you decide to use Jupyterhub then I recommend the `Image Analysis: Special Purpose Desktops`.
   - Open a terminal, you should be in your home folder e.g. /home/username.
@@ -118,8 +118,10 @@ If you want to use conda environments for any of the stages of this practical yo
   
 
 :exclamation: IMPORTANT :exclamation: If you want to run a notebook you will need to activate the python environment as a kernel in the Jupyter Notebook. First we need to add the conda environment to jupyter notebook.
-1. Go to the terminal and activate the environment as before, `/g/kreshuk/talks/miniforge3/bin/conda activate predoc-challenge`
-2. Run the following command to add the environment to the notebook `python -m ipykernel install --user --name=predoc-challenge`
+1. Go to the terminal and activate the environment as before, 
+`conda activate predoc-challenge`
+2. Run the following command to add the environment to the notebook 
+`python -m ipykernel install --user --name=predoc-challenge`
 3. Now when you open up a notebook you can select kernel in the top right and select the `predoc-challenge` kernel.
 
 ### 2. Cell boundary segmentation
