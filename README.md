@@ -111,18 +111,18 @@ Once you have PlantSeg installed can follow the instructions in the [documentati
 If you don't want to install PlantSeg yourself you can use a pre-installed  version via the VMs. In order to access this installation you need to first activate my premade `plant-seg` conda environment. This can be done following the instructions given in the Conda Environment section 3. below. After you have activated the enviroment you need to run the usual PlantSeg command. `plantseg --napari` which will open up the napari gui. You may get an error referring to your QT_API. Try running the following command. `export QT_API=pyqt5`
 
 ## :exclamation: Conda Environment :exclamation:
-If you want to use conda environments for any of the stages of this practical you have a few options depending on your familiarity level.
-1. You know what a Conda environment is and want to make yout own, go ahead no need to read more!!!
+You will need to use conda environments for some of the stages of this practical you have a few options depending on your familiarity level.
+1. You know what a Conda environment is and want to make your own, go ahead no need to read more!!!
 2. You sort of know what a Conda environment is and want to install and set up your own. Hats off to you, give it a go its not that scary :ghost: :ghost:. I advise installing [mininforge](https://github.com/conda-forge/miniforge) you can follow the instructions on their github and ask if you need help.
 3. What is a Conda??? Isn't that a type of snake :snake:? Fear not I have set up some conda environments for you that you can use without installing anything by following the instructions below.
   - For this to work you need to be logged into one of the VMs through [Jupyterhub](https://jupyterhub.embl.de/hub/spawn) or [BARD](https://bard.embl.de/). If you decide to use Jupyterhub then I recommend the `Image Analysis: Special Purpose Desktops`.
   - Open a terminal, you should be in your home folder e.g. /home/username.
-  - Now need to initialise Conda with the command 
+  - Now you need to initialise Conda with the command 
   `/g/kreshuk/talks/miniforge3/bin/conda init`
-  - Now close and re-open the terminal to allow this to take afffect
+  - Now close and re-open the terminal to allow this to take affect.
   - To activate a Conda environment enter the following command into the terminal, replacing ENV_NAME with the desired environment name 
     `conda activate ENV_NAME`
-    I have made a few environments for you to use, the general environment needed to run the notebook is named `predoc-challenge`. An environment to run PlantSeg is called `plant-seg`. An environment to run Cellpose is called 
+    I have made a few environments for you to use, the general environment needed to run the notebook is named `predoc-challenge`. An environment to run PlantSeg is called `plant-seg`.
   - Once your environment is activated you can run whatever commands are neccesary in that same terminal, as per the instructions of the tool you are investigating.
   
 
