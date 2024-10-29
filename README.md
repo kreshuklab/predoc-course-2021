@@ -83,21 +83,23 @@ More information about how to perform all of the workflows or any general inform
 
 If you decide to investigate the 2nd option listed above you will be making use of a pre-trained CNN to predict the nuclei. You can follow the instructions given in the next stage (Cell boundary segmentation). However, you should select a different model, one that is more suitable to your current task [NucleiSegmentationBoundaryModel](https://bioimage.io/#/?tags=nuclei&id=10.5281%2Fzenodo.5764892).
 
-:exclamation:Intallation Advice:exclamation:
+:exclamation:Installation Advice:exclamation:
 
 You can either install ilastik locally on your machine and run everything there, or login to a VM (as discussed above) and run the workflows directly in the pre-installed ilastik.
 
 #### StarDist
 [StarDist](https://github.com/stardist/stardist) is a method based on neural networks that can perform segmentation. More deatils on StarDist can be found on the github or in the original [publication](https://arxiv.org/abs/1806.03535). If you chose to investigate StarDist we can utalise a pretrained model. As detailed on the github page StarDist can be installed as a package and used programmatically, you are welcome to do this and explore the results. Alternatively, if you would rather interact with a gui, StarDist can be run through a Fiji plugin [StarDist Fiji](https://imagej.net/plugins/stardist). If you are using the Fiji plugin I recommend using the model called `Versatile (fluorescent nuclei)`.
 
-:exclamation:Intallation Advice:exclamation:
+:exclamation:Installation Advice:exclamation:
 
 If you are working on a Virtual Machine the pre-existing Fiji is a bit of a problem as it is read only ... yada yada yada. Basically you will need to install your own version of Fiji to allow you to add the StarDist plugin. **Alternatively** you can use my pre-installed version that has the StarDist plugin already installed :star:. To access this version of Fiji run the following command in the VMs terminal. 
 `/g/kreshuk/talks/Fiji.app/ImageJ-linux64`
 
 
 #### Cellpose
-[Cellpose](https://github.com/MouseLand/cellpose) is another neural netowrk based method that can perform object segmentaiton.Instructions for the use and installation of Cellpose can be found on the github page. You can interact with cellpose either programmatically or via a gui. Once again cellpose provides pretrained models that you can make use of. :exclamation: WARNING :exclamation: this does require the setting up of a python conda environment, if you are not already familiar with conda environments I recommend installing [miniforge](https://github.com/conda-forge/miniforge).
+[Cellpose](https://github.com/MouseLand/cellpose) is another neural netowrk based method that can perform object segmentaiton. Instructions for the use and installation of Cellpose can be found on the github page. You can interact with cellpose either programmatically or via a gui. Once again cellpose provides pretrained models that you can make use of. :exclamation: WARNING :exclamation: this does require the setting up of a python conda environment, if you are not already familiar with conda environments I recommend installing [miniforge](https://github.com/conda-forge/miniforge).
+
+Alternatively, if you don't want to install Cellpose you can find it pre-installed on the VMs.
 
 #### PlantSeg
 [PlantSeg](https://github.com/kreshuklab/plant-seg) is a tool for cell instance aware segmentation in densely packed 3D volumetric images. The pipeline uses a two stages segmentation strategy (Neural Network + Segmentation). The pipeline is tuned for plant cell tissue acquired with confocal and light sheet microscopy. Pre-trained models are provided. Follow the github page for installation instructions, :exclamation: WARNING :exclamation: Requires setting up a conda environment follow installation advice for [miniforge](https://github.com/conda-forge/miniforge).
