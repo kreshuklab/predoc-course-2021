@@ -2,7 +2,7 @@
 
 _Course material in previous years/events are managed by other branches._
 
-You will design an image segemntation pipeline for immunofluorescence images of COVID-infected cells published in Microscopy-based assay for semi-quantitative detection of SARS-CoV-2 specific antibodies in human sera[[1]](https://www.biorxiv.org/content/10.1101/2020.06.15.152587v3). Please read the [Introduction](#introduction) before signing up to this challenge.
+You will design an image segmentation pipeline for immunofluorescence images of COVID-infected cells published in Microscopy-based assay for semi-quantitative detection of SARS-CoV-2 specific antibodies in human sera[[1]](https://www.biorxiv.org/content/10.1101/2020.06.15.152587v3). Please read the [Introduction](#introduction) before signing up to this challenge.
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -49,7 +49,7 @@ For quantitative comparison one may use one of the common instance segmentation 
 
 More detailed description of the 3 steps can be found below.
 
-### Nuclei segmentation
+### 1. Nuclei segmentation
 
 Explore algorithms for instance segmentation of the nuclei from the 'nuclei channel'.
 After successfully segmenting the nuclei from the covid assay dataset, save the results in the appropriate format (tiff of hdf5),
@@ -84,7 +84,7 @@ If you decide to investigate the 2nd option listed above you will be making use 
 
 
 
-### Cell boundary segmentation
+### 2. Cell boundary segmentation
 
 In order to simplify the task of cell boundary prediction you will also use a pre-trained CNN.
 This time we encourage you to use the [ilastik Neural Network Classification Workflow](https://www.ilastik.org/documentation/nn/nn).
@@ -107,7 +107,7 @@ Then:
 The network predicts 2 channels: the 1st channel contains a foreground(cells)/background prediction and the 2nd channel
 contains the cell boundaries. You will need both channels for step 3.
 
-### Segmentation with seeded watershed
+### 3. Segmentation with seeded watershed
 
 Given the nuclei segmentation (step 1), the foreground mask and the the boundary prediction maps (step 2),
 use the seeded watershed algorithm from the `skimage` (see [documentation](https://scikit-image.org/docs/stable/api/skimage.segmentation.html#skimage.segmentation.watershed))
@@ -128,7 +128,7 @@ use boundary probability maps as `image` argument, nuclei segmentation as `marke
 conda env create -f environment.yml
 ```
 
-### Segmentation results evaluation
+### 4. Segmentation results evaluation
 
 Compare your cell segmentation results with the ground truth (saved as `cells` dataset in the HDF5 files), using one/all of the metrics described below:
 
