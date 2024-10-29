@@ -52,15 +52,13 @@ More detailed description of the 3 steps can be found below.
 ### 1. Nuclei segmentation
 
 Explore algorithms for instance segmentation of the nuclei from the 'nuclei channel'.
-After successfully segmenting the nuclei from the covid assay dataset, save the results in the appropriate format (tiff of hdf5),
-since you'll need it in step 3.
+After successfully segmenting the nuclei from the covid assay dataset, save the results in the appropriate format (tiff of hdf5), since you'll need it in step 3.
 
 There are multiple options for nuclei instance segmentation that you could explore, this include but are not limited to
 - ilastik workflows
 - StarDist Model
 - Cellpose Model
 - PlantSeg Model
-- InstanSeg
 
 You are welcome to explore whatever approach you would like and can even compare the results of mulitple methods.
 
@@ -80,8 +78,12 @@ If you decide to investigate the 2nd option listed above you will be making use 
 
 
 #### Cellpose
-[Cellpose](https://github.com/MouseLand/cellpose) is another neural netowrk based method that can perform object segmentaiton.Instructions for the use and installation of Cellpose can be found on the github page. You can interact with cellpose either programmatically or via a gui. Once again cellpose provides pretrained models that you can make use of. :exclamation: Warning :exclamation: this does require the setting up of a python conda environment, if you are not already familiar with conda environments I reccomend installing [miniforge](https://github.com/conda-forge/miniforge).
+[Cellpose](https://github.com/MouseLand/cellpose) is another neural netowrk based method that can perform object segmentaiton.Instructions for the use and installation of Cellpose can be found on the github page. You can interact with cellpose either programmatically or via a gui. Once again cellpose provides pretrained models that you can make use of. :exclamation: WARNING :exclamation: this does require the setting up of a python conda environment, if you are not already familiar with conda environments I recommend installing [miniforge](https://github.com/conda-forge/miniforge).
 
+#### PlantSeg
+[PlantSeg](https://github.com/kreshuklab/plant-seg) is a tool for cell instance aware segmentation in densely packed 3D volumetric images. The pipeline uses a two stages segmentation strategy (Neural Network + Segmentation). The pipeline is tuned for plant cell tissue acquired with confocal and light sheet microscopy. Pre-trained models are provided. Follow the github page for installation instructions, :exclamation: WARNING :exclamation: Requires setting up a conda environment follow installation advice for [miniforge](https://github.com/conda-forge/miniforge).
+
+Once you have PlantSeg installed can follow the instructions in the [documentation](https://kreshuklab.github.io/plant-seg/) to run PlantSeg through the napari plugin. You will once again load a pre-trained model and can explore the functionality of PlantSeg. I recommend using the `lightsheet_2D_unet_root_nuclei_ds1x` model
 
 
 ### 2. Cell boundary segmentation
