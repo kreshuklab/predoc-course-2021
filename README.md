@@ -136,6 +136,7 @@ You will need to use conda environments for some of the stages of this practical
 :exclamation: IMPORTANT :exclamation: It is important to note that if you decide to make use my conda installation during the practical, you don't have write access, this means you cannot modify the existing environments or create new environments. This is fine for the purposes of this practical, as you shouldn't have any need to. However, you should be aware that you haven't installed miniforge and if you want to use conda in the future you will need to install your own version and make your own environments. In order to do this you will need to remove the references to my conda installation before you install your own instance. I reccomend at the end of the practical running the folowing commands.
 
 `conda activate`
+
 `conda init --reverse --all`
 
 ### 2. Cell boundary segmentation
